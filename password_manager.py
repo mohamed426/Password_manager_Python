@@ -46,6 +46,8 @@ def main():
                 show_passwords()
             elif operation == 6:
                 exit("Good Bye ^_^")  # Exit the program.
+            else:
+                raise ValueError
         except ValueError:
             # Handle invalid input for menu selection.
             print("Please enter a valid number of operation", end="\n\n")
