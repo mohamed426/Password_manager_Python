@@ -172,7 +172,11 @@ def delete_password():
         delete = int(input("1. Delete Specific Password\n2. Delete All Passwords\n3. Back to main\n"))
         if delete == 1:
             # Delete a specific password based on its name.
-            pass_name = input("Password name: ")
+            while True:
+                pass_name = input("Password name: ")
+                if pass_name:
+                    break
+
             search_for_pass = db.execute("SELECT * FROM passwords WHERE password_name LIKE (?)", pass_name)
             if len(search_for_pass) == 0:
                 print("No data for password name to delete it", end="\n\n")
@@ -203,12 +207,20 @@ def update_password():
     """
     # Get the name associated with the password to be updated.
     pass_name = input("Password name: ")
+    if not pass_name:
+        print("You didn't enter a password name")
+        return update_password()
+    
     search_for_pass = db.execute("SELECT * FROM passwords WHERE password_name LIKE (?)", pass_name)
     if len(search_for_pass) == 0:
         print("No data for password name to update it", end="\n\n")
     else:
         # Get the new password from the user.
-        new_pass = input(f"Enter New Password For {pass_name}")
+        while True:
+            new_pass = input(f"Enter New Password For {pass_name}: ")
+            if new_pass:
+                break
+
         db.execute("UPDATE passwords SET password = (?) WHERE password_name LIKE (?)", new_pass, pass_name)
         print(f"{pass_name.title()} Updated Successfully", end="\n\n")
 
