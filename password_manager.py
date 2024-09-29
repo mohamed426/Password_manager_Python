@@ -234,7 +234,7 @@ def update_password():
 
 def save_generated(generated_pass):
     try:
-        save = input("Do you want to save it? [yes, no]").lower().strip()
+        save = input("Do you want to save it? [yes, no]: ").lower().strip()
         if save in ["y", "yes"]:
             while True:
                 pass_name = input("Password for: ").strip()
