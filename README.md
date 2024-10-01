@@ -2,27 +2,27 @@
 
 A simple password manager application built using Python and SQLite.
 
-## Features
+### Features
 
 * Generate strong, unique passwords
 * Store and manage passwords securely
 * Update and delete existing passwords
 * Search for specific passwords
 
-## Requirements
+### Requirements
 
 * Python 3.x
 * SQLite
 * cs50 library
 * tabulate library
 
-## Installation
+### Installation
 
 1. Clone the repository
 2. Install the required libraries: `pip install cs50 tabulate`
 3. Run the application: `python password_manager.py`
 
-## Usage
+### Usage
 
 1. Run the application and select an option from the menu:
 	* Generate Password: Generate a strong, unique password
@@ -33,5 +33,5 @@ A simple password manager application built using Python and SQLite.
 	* Exit: Quit the application
 2. Follow the prompts to complete the selected action
 
-## Author:
+### Author:
 - Mohammed Khaled Abdalla
