@@ -1,5 +1,4 @@
 # Password Manager Application
-==========================
 
 A simple password manager application built using Python and SQLite.
 
