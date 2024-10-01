@@ -9,18 +9,21 @@ A simple password manager application built using Python and SQLite.
 * Update and delete existing passwords
 * Search for specific passwords
 
-### Requirements
+### Dependencies:
+- **Python 3.x**
+- **CS50 Library for Python** (`pip install cs50`)
+- **Tabulate Library** (`pip install tabulate`)
 
-* Python 3.x
-* SQLite
-* cs50 library
-* tabulate library
-
-### Installation
-
-1. Clone the repository
-2. Install the required libraries: `pip install cs50 tabulate`
-3. Run the application: `python password_manager.py`
+### Setup:
+1. Clone or download the repository.
+2. Ensure the necessary Python libraries are installed:
+   ```bash
+   pip install cs50 tabulate
+   ```
+3. Run the application:
+   ```bash
+   python todo.py
+   ```
 
 ### Usage
 
