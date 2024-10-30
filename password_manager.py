@@ -54,6 +54,9 @@ def main():
             # Handle invalid input for menu selection.
             print("Please enter a valid number of operation", end="\n\n")
             return main()
+        except KeyboardInterrupt:
+            print()
+            exit("Force Exiting .....")
 
 def generate_password():
     """
@@ -96,12 +99,12 @@ def generate_password():
             pass_contain += ascii_uppercase
         if puncs in ["y", "yes"]:
             pass_contain += punctuation
-
+        
         # Ensure that at least one character type is selected.
         if not pass_contain:
             print("You must select at least one character type for your password!")
             return generate_password()
-            
+        
         # Generate the password using the selected character types.
         for _ in range(length):
             password.append(random.choice(pass_contain))
