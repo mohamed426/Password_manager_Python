@@ -90,26 +90,42 @@ def generate_password():
 
         pass_contain = []
 
-        # Add the corresponding character sets to the password pool based on user choices.
+        # Ensure at least one character type is selected.
         if nums in ["y", "yes"]:
-            pass_contain += digits
+            pass_contain.append(random.choice(digits))
         if lows in ["y", "yes"]:
-            pass_contain += ascii_lowercase
+            pass_contain.append(random.choice(ascii_lowercase))
         if caps in ["y", "yes"]:
-            pass_contain += ascii_uppercase
+            pass_contain.append(random.choice(ascii_uppercase))
         if puncs in ["y", "yes"]:
-            pass_contain += punctuation
+            pass_contain.append(random.choice(punctuation))
         
-        # Ensure that at least one character type is selected.
         if not pass_contain:
             print("You must select at least one character type for your password!")
             return generate_password()
+
+        # Calculate the remaining characters to be filled
+        remaining_length = length - len(pass_contain)
+
+        # Create the complete pool of characters based on user preferences.
+        full_pool = ''
+        if nums in ["y", "yes"]:
+            full_pool += digits
+        if lows in ["y", "yes"]:
+            full_pool += ascii_lowercase
+        if caps in ["y", "yes"]:
+            full_pool += ascii_uppercase
+        if puncs in ["y", "yes"]:
+            full_pool += punctuation
+
+        # Add random characters from the pool to meet the required length.
+        pass_contain += random.choices(full_pool, k=remaining_length)
         
-        # Generate the password using the selected character types.
-        for _ in range(length):
-            password.append(random.choice(pass_contain))
+        # Shuffle the list to ensure the characters are in a random order.
+        random.shuffle(pass_contain)
         
-        return ''.join(password)  # Return the generated password as a string.
+        # Return the generated password as a string.
+        return ''.join(pass_contain)
     except ValueError:
         # Handle invalid input for character type inclusion.
         print("Please enter yes or no", end="\n\n")
