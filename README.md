@@ -11,18 +11,18 @@ A simple password manager application built using Python and SQLite.
 
 ### Dependencies:
 - **Python 3.x**
-- **CS50 Library for Python** (`pip install cs50`)
+- **pyfiglet** (`pip install pyfiglet`)
 - **Tabulate Library** (`pip install tabulate`)
 
 ### Setup:
 1. Clone or download the repository.
 2. Ensure the necessary Python libraries are installed:
    ```bash
-   pip install cs50 tabulate
+   pip install pyfiglet tabulate
    ```
 3. Run the application:
    ```bash
-   python todo.py
+   python password_manager
    ```
 
 ### Usage
