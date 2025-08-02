@@ -22,7 +22,7 @@ A simple password manager application built using Python and SQLite.
    ```
 3. Run the application:
    ```bash
-   python password_manager
+   python password_manager.py
    ```
 
 ### Usage
